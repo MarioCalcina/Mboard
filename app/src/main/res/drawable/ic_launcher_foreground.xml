@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Icono de Mboard: teclado con la letra M -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+  <path
+      android:pathData="M35,33H73A7,7 0,0 1,80,40V68A7,7 0,0 1,73,75H35A7,7 0,0 1,28,68V40A7,7 0,0 1,35,33Z"
+      android:fillColor="#00000000"
+      android:strokeColor="#FFFFFF"
+      android:strokeWidth="3.2"/>
+  <path
+      android:pathData="M42,53V40L54,49L66,40V53"
+      android:fillColor="#00000000"
+      android:strokeColor="#FFFFFF"
+      android:strokeWidth="4.2"
+      android:strokeLineCap="round"
+      android:strokeLineJoin="round"/>
+  <path
+      android:pathData="M36.2,59H40.8A1.2,1.2 0,0 1,42.0,60.2V61.8A1.2,1.2 0,0 1,40.8,63H36.2A1.2,1.2 0,0 1,35.0,61.8V60.2A1.2,1.2 0,0 1,36.2,59ZM46.53,59H51.129999999999995A1.2,1.2 0,0 1,52.33,60.2V61.8A1.2,1.2 0,0 1,51.129999999999995,63H46.53A1.2,1.2 0,0 1,45.33,61.8V60.2A1.2,1.2 0,0 1,46.53,59ZM56.86,59H61.459999999999994A1.2,1.2 0,0 1,62.66,60.2V61.8A1.2,1.2 0,0 1,61.459999999999994,63H56.86A1.2,1.2 0,0 1,55.66,61.8V60.2A1.2,1.2 0,0 1,56.86,59ZM67.19,59H71.78999999999999A1.2,1.2 0,0 1,72.99,60.2V61.8A1.2,1.2 0,0 1,71.78999999999999,63H67.19A1.2,1.2 0,0 1,65.99,61.8V60.2A1.2,1.2 0,0 1,67.19,59ZM41.6,66.5H66.4A1.6,1.6 0,0 1,68,68.1V68.4A1.6,1.6 0,0 1,66.4,70H41.6A1.6,1.6 0,0 1,40,68.4V68.1A1.6,1.6 0,0 1,41.6,66.5Z"
+      android:fillColor="#FFFFFF"/>
+</vector>
