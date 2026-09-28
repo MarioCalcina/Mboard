@@ -20,7 +20,6 @@ import android.view.inputmethod.InputMethodSubtype
 import androidx.core.app.LocaleManagerCompat
 import androidx.core.os.LocaleListCompat
 import com.android.inputmethod.latin.utils.BinaryDictionaryUtils
-import com.mboard.keyboard.latin.BuildConfig
 import com.mboard.keyboard.latin.DictionaryFacilitatorImpl
 import com.mboard.keyboard.latin.common.StringUtils
 import org.robolectric.annotation.Implementation
@@ -40,9 +39,7 @@ object ShadowLocaleManagerCompat {
 class ShadowInputMethodManager2 : ShadowInputMethodManager() {
     @Implementation
     override fun getInputMethodList() = listOf(
-        if (BuildConfig.BUILD_TYPE == "debug" || BuildConfig.BUILD_TYPE == "debugNoMinify")
-            InputMethodInfo("com.mboard.keyboard.debug", "LatinIME", "Mboard debug", null)
-        else InputMethodInfo("com.mboard.keyboard", "LatinIME", "Mboard", null),
+        InputMethodInfo("com.mboard.keyboard", "LatinIME", "Mboard", null),
     )
     @Implementation
     fun getShortcutInputMethodsAndSubtypes() = emptyMap<InputMethodInfo, List<InputMethodSubtype>>()

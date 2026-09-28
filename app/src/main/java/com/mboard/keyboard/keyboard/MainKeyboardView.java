@@ -10,7 +10,6 @@ import android.animation.AnimatorInflater;
 import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -52,10 +51,7 @@ import com.mboard.keyboard.latin.common.Colors;
 import com.mboard.keyboard.latin.common.Constants;
 import com.mboard.keyboard.latin.common.CoordinateUtils;
 import com.mboard.keyboard.latin.define.DebugFlags;
-import com.mboard.keyboard.latin.settings.DebugSettings;
-import com.mboard.keyboard.latin.settings.Defaults;
 import com.mboard.keyboard.latin.settings.Settings;
-import com.mboard.keyboard.latin.utils.KtxKt;
 import com.mboard.keyboard.latin.utils.LanguageOnSpacebarUtils;
 import com.mboard.keyboard.latin.utils.Log;
 import com.mboard.keyboard.latin.utils.TypefaceUtils;
@@ -152,12 +148,8 @@ public final class MainKeyboardView extends KeyboardView implements DrawingProxy
 
         PointerTracker.init(mainKeyboardViewAttr, mTimerHandler, this /* DrawingProxy */);
 
-        final SharedPreferences prefs = KtxKt.prefs(context);
-        final boolean forceNonDistinctMultitouch = prefs.getBoolean(
-                DebugSettings.PREF_FORCE_NON_DISTINCT_MULTITOUCH, Defaults.PREF_FORCE_NON_DISTINCT_MULTITOUCH);
         final boolean hasDistinctMultitouch = context.getPackageManager()
-                .hasSystemFeature(PackageManager.FEATURE_TOUCHSCREEN_MULTITOUCH_DISTINCT)
-                && !forceNonDistinctMultitouch;
+                .hasSystemFeature(PackageManager.FEATURE_TOUCHSCREEN_MULTITOUCH_DISTINCT);
         mNonDistinctMultitouchHelper = hasDistinctMultitouch ? null : new NonDistinctMultitouchHelper();
 
         final int backgroundDimAlpha = mainKeyboardViewAttr.getInt(

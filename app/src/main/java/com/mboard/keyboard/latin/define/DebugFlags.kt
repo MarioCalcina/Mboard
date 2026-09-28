@@ -9,11 +9,8 @@ package com.mboard.keyboard.latin.define
 import android.content.Context
 import android.os.Build
 import com.mboard.keyboard.latin.BuildConfig
-import com.mboard.keyboard.latin.settings.DebugSettings
-import com.mboard.keyboard.latin.settings.Defaults
 import com.mboard.keyboard.latin.utils.DeviceProtectedUtils
 import com.mboard.keyboard.latin.utils.Log
-import com.mboard.keyboard.latin.utils.prefs
 import java.io.File
 import java.io.PrintWriter
 import java.io.StringWriter
@@ -26,7 +23,7 @@ object DebugFlags {
     var DEBUG_ENABLED = false
 
     fun init(context: Context) {
-        DEBUG_ENABLED = context.prefs().getBoolean(DebugSettings.PREF_DEBUG_MODE, Defaults.PREF_DEBUG_MODE)
+        DEBUG_ENABLED = BuildConfig.DEBUG
         CrashReportExceptionHandler(context.applicationContext).install()
     }
 }

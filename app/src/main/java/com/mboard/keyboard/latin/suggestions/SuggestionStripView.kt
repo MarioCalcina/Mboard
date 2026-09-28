@@ -42,8 +42,6 @@ import com.mboard.keyboard.latin.common.ColorType
 import com.mboard.keyboard.latin.common.Colors
 import com.mboard.keyboard.latin.common.Constants
 import com.mboard.keyboard.latin.define.DebugFlags
-import com.mboard.keyboard.latin.settings.DebugSettings
-import com.mboard.keyboard.latin.settings.Defaults
 import com.mboard.keyboard.latin.settings.Settings
 import com.mboard.keyboard.latin.utils.ToolbarKey
 import com.mboard.keyboard.latin.utils.ToolbarMode
@@ -109,8 +107,6 @@ class SuggestionStripView(context: Context, attrs: AttributeSet?, defStyle: Int)
             info.setTextSize(TypedValue.COMPLEX_UNIT_DIP, DEBUG_INFO_TEXT_SIZE_IN_DIP)
             debugInfoViews.add(info)
         }
-
-        DEBUG_SUGGESTIONS = context.prefs().getBoolean(DebugSettings.PREF_SHOW_SUGGESTION_INFOS, Defaults.PREF_SHOW_SUGGESTION_INFOS)
     }
 
     // toolbar views, drawables and setup

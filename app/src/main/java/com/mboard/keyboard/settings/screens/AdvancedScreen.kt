@@ -23,12 +23,10 @@ import com.mboard.keyboard.latin.BuildConfig
 import com.mboard.keyboard.latin.R
 import com.mboard.keyboard.latin.SystemBroadcastReceiver
 import com.mboard.keyboard.latin.common.splitOnWhitespace
-import com.mboard.keyboard.latin.settings.DebugSettings
 import com.mboard.keyboard.latin.settings.Defaults
 import com.mboard.keyboard.latin.settings.Settings
 import com.mboard.keyboard.latin.utils.checkTimestampFormat
 import com.mboard.keyboard.latin.utils.prefs
-import com.mboard.keyboard.latin.utils.NextScreenIcon
 import com.mboard.keyboard.settings.SettingsContainer
 import com.mboard.keyboard.settings.preferences.ListPreference
 import com.mboard.keyboard.settings.SettingsWithoutKey
@@ -36,7 +34,6 @@ import com.mboard.keyboard.settings.Setting
 import com.mboard.keyboard.settings.preferences.Preference
 import com.mboard.keyboard.settings.SearchSettingsScreen
 import com.mboard.keyboard.settings.SettingsActivity
-import com.mboard.keyboard.settings.SettingsDestination
 import com.mboard.keyboard.settings.preferences.SliderPreference
 import com.mboard.keyboard.settings.preferences.SwitchPreference
 import com.mboard.keyboard.latin.utils.Theme
@@ -83,8 +80,6 @@ fun AdvancedSettingsScreen(
         Settings.PREF_MORE_POPUP_KEYS,
         Settings.PREF_TIMESTAMP_FORMAT,
         SettingsWithoutKey.BACKUP_RESTORE,
-        if (BuildConfig.DEBUG || prefs.getBoolean(DebugSettings.PREF_SHOW_DEBUG_SETTINGS, Defaults.PREF_SHOW_DEBUG_SETTINGS))
-            SettingsWithoutKey.DEBUG_SETTINGS else null,
         R.string.settings_category_experimental,
         Settings.PREF_EMOJI_MAX_SDK,
         Settings.PREF_URL_DETECTION,
@@ -229,12 +224,6 @@ fun createAdvancedSettings(context: Context) = listOf(
     },
     Setting(context, Settings.PREF_TIMESTAMP_FORMAT, R.string.timestamp_format_title) { setting ->
         TextInputPreference(setting, Defaults.PREF_TIMESTAMP_FORMAT, stringResource(R.string.timestamp_description)) { checkTimestampFormat(it) }
-    },
-    Setting(context, SettingsWithoutKey.DEBUG_SETTINGS, R.string.debug_settings_title) {
-        Preference(
-            name = it.title,
-            onClick = { SettingsDestination.navigateTo(SettingsDestination.Debug) }
-        ) { NextScreenIcon() }
     },
     Setting(context, Settings.PREF_EMOJI_MAX_SDK, R.string.prefs_key_emoji_max_sdk) { setting ->
         val ctx = LocalContext.current

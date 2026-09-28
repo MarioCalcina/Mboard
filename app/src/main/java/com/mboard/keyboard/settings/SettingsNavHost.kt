@@ -20,7 +20,6 @@ import com.mboard.keyboard.settings.screens.AboutScreen
 import com.mboard.keyboard.settings.screens.AdvancedSettingsScreen
 import com.mboard.keyboard.settings.screens.AppearanceScreen
 import com.mboard.keyboard.settings.screens.ColorsScreen
-import com.mboard.keyboard.settings.screens.DebugScreen
 import com.mboard.keyboard.settings.screens.DictionaryScreen
 import com.mboard.keyboard.settings.screens.GestureTypingScreen
 import com.mboard.keyboard.settings.screens.LanguageScreen
@@ -96,9 +95,6 @@ fun SettingsNavHost(
         composable(SettingsDestination.Advanced) {
             AdvancedSettingsScreen(onClickBack = ::goBack)
         }
-        composable(SettingsDestination.Debug) {
-            DebugScreen(onClickBack = ::goBack)
-        }
         composable(SettingsDestination.Appearance) {
             AppearanceScreen(onClickBack = ::goBack)
         }
@@ -143,7 +139,6 @@ object SettingsDestination {
     const val Toolbar = "toolbar"
     const val GestureTyping = "gesture_typing"
     const val Advanced = "advanced"
-    const val Debug = "debug"
     const val Appearance = "appearance"
     const val Colors = "colors/"
     const val ColorsNight = "colors_night/"

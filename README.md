@@ -23,12 +23,10 @@ El formato de las distribuciones de teclado está descrito en [layouts.md](layou
 
 Descarga el APK de la última versión en la pestaña [*Releases*](https://github.com/MarioCalcina/Mboard/releases). Las versiones de *Releases* se firman siempre con la misma clave, así que se pueden actualizar sin desinstalar (y sin perder palabras aprendidas ni ajustes).
 
-> El APK *debug* de *Actions* se firma con una clave distinta en cada compilación: sirve para probar, pero para actualizarlo hay que desinstalar la versión anterior. Antes de hacerlo, guarda una copia desde *Ajustes → Avanzado → Copia de seguridad y restauración*.
-
 ## Compilar
 
-- **GitHub Actions**: pestaña *Actions* → *Build debug APK* → *Run workflow*; el APK aparece en *Artifacts*.
-- **Android Studio**: abrir la carpeta y ejecutar `./gradlew assembleDebug` (o `assembleRelease`, ver abajo).
+- **GitHub Actions**: el workflow *Release APK* compila, firma y publica el APK al subir una etiqueta `v*` (ver abajo). También se puede lanzar a mano desde *Actions* → *Release APK* → *Run workflow*; el APK aparece en *Artifacts*.
+- **Android Studio**: abrir la carpeta y ejecutar `./gradlew assembleRelease` (ver abajo cómo firmarlo).
 - **Pruebas**: `./gradlew testRunTestsUnitTest` (se ejecutan también en *Actions* con cada push a `main`).
 
 ### Publicar una versión
