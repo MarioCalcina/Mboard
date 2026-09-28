@@ -2,7 +2,7 @@
 package com.mboard.keyboard.latin.common
 
 object Links {
-    const val GITHUB = "https://github.com/MarioCalcina/Mboard"
+    const val GITHUB = "https://github.com/MarioCalcina/MBoard"
     const val LICENSE = "$GITHUB/blob/main/LICENSE"
     const val LAYOUT_WIKI_URL = "$GITHUB/blob/main/layouts.md"
 }

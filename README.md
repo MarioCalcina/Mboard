@@ -21,7 +21,7 @@ El formato de las distribuciones de teclado está descrito en [layouts.md](layou
 
 ## Instalar
 
-Descarga el APK de la última versión en la pestaña [*Releases*](https://github.com/MarioCalcina/Mboard/releases). Las versiones de *Releases* se firman siempre con la misma clave, así que se pueden actualizar sin desinstalar (y sin perder palabras aprendidas ni ajustes).
+Descarga el APK de la última versión en la pestaña [*Releases*](https://github.com/MarioCalcina/MBoard/releases). Las versiones de *Releases* se firman siempre con la misma clave, así que se pueden actualizar sin desinstalar (y sin perder palabras aprendidas ni ajustes).
 
 ## Compilar
 
